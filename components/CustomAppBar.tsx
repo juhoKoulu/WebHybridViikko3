@@ -10,14 +10,16 @@ export default function CustomAppBar({
     <Appbar.Header>
       {back ? (
         <Appbar.BackAction onPress={navigation.goBack} />
-      ) : (
+      ) : null}
+
+      <Appbar.Content title="MD Nav Demo" />
+
+      {!back ? (
         <Appbar.Action
           icon="arrow-right"
           onPress={() => navigation.navigate("Second")}
         />
-      )}
-
-      <Appbar.Content title={route.name} />
+      ) : null}
     </Appbar.Header>
   );
 }
